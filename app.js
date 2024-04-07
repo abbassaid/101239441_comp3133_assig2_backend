@@ -11,7 +11,9 @@ async function startServer() {
         typeDefs,
         resolvers,
         introspection: true,
-        playground: true
+        playground: true,
+        cache: "bounded", // Add cache: "bounded" here
+        persistedQueries: false // Add persistedQueries: false here
     });
 
     await apolloServer.start();
