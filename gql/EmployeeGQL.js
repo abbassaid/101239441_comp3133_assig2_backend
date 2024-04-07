@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server");
 const Employee = require("../models/Employee");
 
+// Updating
 const EmployeeTypeDefs = gql`
   #graphql
 
@@ -55,6 +56,7 @@ const EmployeeResolvers = {
   Query: {
     employees: async () => {
       try {
+        // getting all employees
         const allEmployees = await Employee.find().exec();
         return allEmployees;
       } catch (err) {
