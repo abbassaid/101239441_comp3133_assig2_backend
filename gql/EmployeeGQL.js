@@ -5,12 +5,12 @@ const EmployeeTypeDefs = gql`
   #graphql
 
   type Employee {
-    id: String!
-    firstName: String!
-    lastName: String!
-    email: String!
-    gender: String!
-    salary: Float!
+    id: String
+    firstName: String
+    lastName: String
+    email: String
+    gender: String
+    salary: Float
   }
 
   type Query { # Display data
@@ -29,15 +29,15 @@ const EmployeeTypeDefs = gql`
 
   type Mutation { # CRUD operations
     addEmployee(
-      firstName: String!
-      lastName: String!
-      email: String!
-      gender: String!
-      salary: Float!
+      firstName: String
+      lastName: String
+      email: String
+      gender: String
+      salary: Float
     ): EmpResponse # add a new employee
 
     updateEmployeebyId(
-      id: String!
+      id: String
       
       #optional fields as we only update the fields that we want
       firstName: String
@@ -50,11 +50,6 @@ const EmployeeTypeDefs = gql`
     deleteEmployeebyId(id: ID!): DeleteMessage # delete an employee by id
   }
 `;
-// data types that we have are
-// int,float,string,boolean, ID
-
-// ! means that the field is required
-// if we don't put ! then the field is optional and can be null
 
 const EmployeeResolvers = {
   Query: {
